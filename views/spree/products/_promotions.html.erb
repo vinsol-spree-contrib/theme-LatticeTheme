@@ -4,10 +4,10 @@
   <div id="promotions">
     <!-- <h3><%#= Spree.t(:promotions) %></h3> -->
     <% promotions.each do |promotion| %>
-      <h4><%= promotion.name %></h4>
+      <h4 class="text-uppercase"><strong><%= promotion.name %></strong></h4>
       <p><%= promotion.description %></p>
       <% if promotion.products.any? %>
-        <ul>
+        <ul class="promotions">
           <% promotion.products.each do |product| %>
             <li><%= link_to product.name, product_path(product) %></li>
           <% end %>

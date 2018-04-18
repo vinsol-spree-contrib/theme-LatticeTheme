@@ -6,7 +6,7 @@
   </div>
   <% if Spree::Config[:allow_guest_checkout] %>
     <div class="col-md-6">
-      <div class="panel panel-default">
+      <div class="panel panel-custom panel-top-margin">
         <div class="panel-heading">
           <h3 class="panel-title"><%= Spree.t(:guest_user_account) %></h3>
         </div>
@@ -15,7 +15,7 @@
             <p>
               <%= f.email_field :email, :class => 'form-control title', :placeholder => Spree.t(:email) %>
             </p>
-            <p><%= f.submit Spree.t(:continue), :class => 'btn btn-lg btn-success btn-block' %></p>
+            <p><%= f.submit Spree.t(:continue), :class => 'btn btn-lg btn-site-green btn-block' %></p>
           <% end %>
         </div>
       </div>

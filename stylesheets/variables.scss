@@ -48,6 +48,12 @@
   transition: $value;
 }
 
+@mixin transform($value...) {
+  -webkit-transform: $value;
+  -moz-transform: $value;
+  transform: $value;
+}
+
 
 
 /*Font colors*/
