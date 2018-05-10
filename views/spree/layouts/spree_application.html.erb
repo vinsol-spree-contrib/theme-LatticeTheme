@@ -14,6 +14,7 @@
     <div class="main-flex-container">
       <div class="main-left-bar">
       <%= render partial: 'spree/shared/google_analytics.js' %>
+      <%= render partial: 'spree/shared/trackers/segment/initializer.js' %>
       <%= render partial: 'spree/shared/header' %>
       <%= render partial: 'spree/shared/sidebar' if content_for? :sidebar %>
 

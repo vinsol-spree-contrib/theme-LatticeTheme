@@ -54,7 +54,7 @@ $( document ).ready(function() {
         <div id="product-price">
           <div class="product-price">
             <span class="text-uppercase text-muted"><%= Spree.t(:price) %> - </span>
-            <strong class="price selling" itemprop="price">
+            <strong class="price selling" itemprop="price", content="<%= @product.price_in(current_currency).amount.to_d %>">
               <%= display_price(@product) %>
             </strong>
             <span itemprop="priceCurrency" content="<%= @product.currency %>"></span>
