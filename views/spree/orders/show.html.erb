@@ -4,7 +4,8 @@
                formats: :js,
                locals: { order: @order } %>
     <% content_for :google_analytics do %>
-    <%= render partial: 'spree/shared/google_purchase.js', locals: { order: @order } %>
+      <%= render partial: 'spree/shared/google_purchase.js', locals: { order: @order } %>
+    <% end %>
   <% end %>
 <% end %>
 
