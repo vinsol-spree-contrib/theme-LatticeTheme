@@ -34,11 +34,11 @@
           </div>
           <hr>
           <h4 class="stock-shipping-method-title"><%= Spree.t(:shipping_method) %></h4>
-          <div class="shipping-methods">
+          <div class="shipping-methods row">
             <% ship_form.object.shipping_rates.each do |rate| %>
-              <div class="shipping-method col-sm-4 form-group">
-                <label>
-                  <%= ship_form.radio_button :selected_shipping_rate_id, rate.id, data: { behavior: 'shipping-method-selector', cost: rate.display_cost } %>
+              <div class="shipping-method col-md-4 col-sm-6 form-group">
+                <label class="d-block">
+                  <%= ship_form.radio_button :selected_shipping_rate_id, rate.id, data: { behavior: 'shipping-method-selector', cost: rate.display_cost }, class: 'radio_check' %>
                   <span class="rate-name"><%= rate.name %></span>
                   <span class="badge rate-cost"><%= rate.display_cost %></span>
                 </label>
@@ -93,8 +93,12 @@
 
 <br />
 
-<div class="well text-right form-buttons" data-hook="buttons">
-  <%= submit_tag Spree.t(:save_and_continue), class: 'btn btn-lg btn-site-green' %>
+<div class="well form-buttons" data-hook="buttons">
+  <div class="row">
+    <div class="col-md-5 col-md-offset-7  col-sm-6 col-sm-offset-6">
+      <%= submit_tag Spree.t(:save_and_continue), class: 'btn btn-block btn-site-green' %>
+    </div>
+  </div>
 </div>
 
 <%= javascript_include_tag 'spree/frontend/checkout/shipment' %>

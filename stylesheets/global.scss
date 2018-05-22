@@ -24,12 +24,27 @@ input[type=number]::-webkit-outer-spin-button {
 a {
   color: $primary-black;
 }
+a.il, .il a {
+  text-decoration: underline;
+  &:hover {
+    text-decoration: none;
+  }
+}
 
 .mt0 {
   margin-top: 0;
 }
 .mb0 {
   margin-bottom: 0;
+}
+.pos-rel{
+  position: relative;
+}
+.d-block {
+  display: block;
+}
+.vmid {
+  vertical-align: middle !important;
 }
 
 #content {
@@ -251,13 +266,12 @@ a {
   left: 0;
   top: 0;
 }
-.radio_check + label {
-  display: block;
+.radio_check + * {
+  display: inline-block;
   margin: 0;
   padding-left: 25px;
   font-weight: 300;
   position: relative;
-  font-style: italic;
   &:before {
     content: '';
     display: block;
@@ -271,12 +285,12 @@ a {
     margin-top: -8px;
   }
 }
-.radio_check[type="radio"] + label {
+.radio_check[type="radio"] + * {
   &:before {
     border-radius: 50%;
   }
 }
-.radio_check:checked + label {
+.radio_check:checked + * {
   color: $primary-black;
   font-style: normal;
   font-weight: 400;;
@@ -592,6 +606,39 @@ ul.promotions {
     }
   }
 }
+.line-item-description {
+  display: inline-block;
+  white-space: normal;
+  word-wrap: break-word;
+}
+
+.coupon_code {
+  @include display-flex(flex);
+  @include flex-wrap(wrap);
+  .form-control {
+    width: calc(100% - 100px);
+  }
+  .btn {
+    width: 100px;
+    margin-left: -1px;
+  }
+}
+.alert-error:not(.alert),
+.alert-success:not(.alert) {
+  margin-top: 10px;
+  padding: 10px 15px;
+  font-size: 11px;
+  width: 100%;
+  text-align: center;
+  font-weight: $font-regular;
+}
+
+.clear_cart_link {
+  margin: 30px 0 70px 0;
+}
+.stock-shipping-method-title {
+  padding: 20px 0 10px 0;
+}
 
 .color-animate {
   animation: fontbulger 2s infinite;
@@ -632,7 +679,10 @@ ul.promotions {
 }
 
 @media (max-width: $tablet) {
-
+  .line-item-description {
+    max-width: 300px;
+    min-width: 200px;
+  }
 }
 @media (max-width: $mobile) {
   .main-flex-container {
@@ -698,6 +748,12 @@ ul.promotions {
   }
   .sidebar_toggle_button {
     display: block;
+  }
+  .line-item-description {
+    max-width: 200px;
+  }
+  .variant-list {
+    @include flex-direction(column);
   }
 }
 
