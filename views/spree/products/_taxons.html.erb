@@ -5,7 +5,7 @@
       <div class="product-list-item col-md-3 col-sm-6">
         <% product = taxon.products.last %>
         <%= link_to seo_url(taxon) do %>
-          <%= image_tag(product.images.last.attachment.url(:large), class:'img-responsive') %>
+          <%= image_tag(main_app.url_for(product.images.last.url(:large)), class:'img-responsive') %>
           <div class="product_overlay">
             <div class="similar_taxon"><%= taxon.name %></div>
           </div>
