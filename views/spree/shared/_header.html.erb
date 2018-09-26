@@ -23,7 +23,9 @@
     </ul>
     <figure id="logo" data-hook>
       <%#= logo %>
-      <%= link_to (image_tag 'logo.png', class: 'img-responsive center-block'), root_path %>
+      <a href="/">
+        <%= image_tag asset_path('/vinsol_spree_themes/current/images/logo.png'), class: 'img-responsive center-block'%>
+      </a>
     </figure>
     <div id="search-bar" data-hook>
       <%= render partial: 'spree/shared/search' %>
